@@ -36,11 +36,12 @@
         ],
         "quotes": [
             "error",
-            "double"
+            "single"
         ],
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "react/prop-types": 0
     }
 }
