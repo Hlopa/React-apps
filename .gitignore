@@ -11,6 +11,10 @@
 # production
 **/build
 
+#Keys
+
+**/*/key.js
+
 # misc
 **/.DS_Store
 **/.env.local
