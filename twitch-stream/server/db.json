@@ -1,16 +1,6 @@
 {
   "streams": [
     {
-      "title": "cdcd",
-      "description": "dcdcdcd",
-      "id": 1
-    },
-    {
-      "title": "dvd",
-      "description": "dvdv",
-      "id": 2
-    },
-    {
       "title": "gfggf",
       "description": "gfggfff",
       "id": 3
@@ -30,12 +20,6 @@
       "description": "wit is",
       "userId": "114396966602769601459",
       "id": 6
-    },
-    {
-      "title": "helllllll",
-      "description": "rrrhhhh",
-      "userId": "114396966602769601459",
-      "id": 7
     }
   ]
 }
