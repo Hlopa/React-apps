@@ -15,13 +15,13 @@ export const signIn = (userId) => {
     type: SIGN_IN,
     payload: userId
   }
-}
+};
 
 export const signOut = () => {
   return {
     type: SIGN_OUT
   }
-}
+};
 
 export const createStream = (formValues) => async (dispatch, getState) => {
   const {userId} = getState().auth;
@@ -33,7 +33,7 @@ export const createStream = (formValues) => async (dispatch, getState) => {
   });
   //get the user back to the root route
   history.push('/');
-}
+};
 
 export const fetchStreams = () => async (dispatch) => {
   const responce = await streams.get('/streams');
@@ -42,7 +42,7 @@ export const fetchStreams = () => async (dispatch) => {
     type: FETCH_STREAMS,
     payload: responce.data
   });
-}
+};
 
 export const fetchStream = (id) => async (dispatch) => {
   const responce = await streams.get(`/streams/${id}`);
@@ -51,7 +51,7 @@ export const fetchStream = (id) => async (dispatch) => {
     type: FETCH_STREAM,
     payload: responce.data
   });
-}
+};
 
 export const editStream = (id, formValues) => async (dispatch) => {
   const responce = await streams.patch(`/streams/${id}`, formValues);
@@ -62,7 +62,7 @@ export const editStream = (id, formValues) => async (dispatch) => {
   });
   //get the user back to the root route
   history.push('/');
-}
+};
 
 export const deleteStream = (id) => async (dispatch) => {
   await streams.delete(`/streams/${id}`);
@@ -70,7 +70,6 @@ export const deleteStream = (id) => async (dispatch) => {
   dispatch({
     type: DELETE_STREAM, payload: id
   });
-}
-
-
-
+  //get the user back to the root route
+  history.push('/');
+};
