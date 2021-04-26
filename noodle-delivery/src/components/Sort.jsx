@@ -1,6 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 
-const Sort = ({ items, onChangeSortType, activeCategory }) => {
+
+const Sort = ({ items = [], onChangeSortType, activeCategory = ''}) => {
   const activeLabel = items.find(obj => obj.type === activeCategory).name;
 
   const sortItem = items.map((obj, index) => (
@@ -49,6 +51,13 @@ const Sort = ({ items, onChangeSortType, activeCategory }) => {
       }
     </div>
   )
-}
+};
+
+
+Sort.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.object).isRequired,
+  onChangeSortType: PropTypes.func,
+  activeCategory: PropTypes.string
+};
 
 export default Sort;

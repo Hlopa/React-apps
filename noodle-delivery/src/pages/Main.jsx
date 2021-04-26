@@ -15,11 +15,10 @@ const sortNames = [
   { name: 'алфавиту', type: 'name' }
 ];
 
-
 const Main = () => {
   const dispatch = useDispatch();
   const { category, sortBy } = useSelector(({ filters }) => filters);
-  const {items, isLoaded} = useSelector(({ getProducts }) => getProducts);
+  const {items} = useSelector(({ getProducts }) => getProducts);
 
   const selectCategory = (index) => {
     dispatch(setCategory(index))

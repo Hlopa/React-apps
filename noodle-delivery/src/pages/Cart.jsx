@@ -50,7 +50,6 @@ const Cart = () => {
 
 
   const handlePlus = (item) => {
-
     const choseProduct = {
       id: item.id,
       name: item.name,

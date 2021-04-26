@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 
-const ProductItem = ({ id, imageUrl, name, descr, spicy, vegan, price, handle }) => {
 
+const ProductItem = ({ id, imageUrl = '', name, descr = '', spicy = false, vegan = false, price, handle}) => {
 
   const [activeItem, setActiveItem] = useState(false);
   const [currentCost, serCurrentCost] = useState([price[0]]);
@@ -33,7 +34,6 @@ const ProductItem = ({ id, imageUrl, name, descr, spicy, vegan, price, handle })
     } else if (activeType === 0) {
       serCurrentCost(price[index]);
     }
-
   };
 
   const currentNum = (arr) => {
@@ -134,6 +134,18 @@ const ProductItem = ({ id, imageUrl, name, descr, spicy, vegan, price, handle })
       </div>
     </li>
   )
-}
+};
 
-export default ProductItem
+ProductItem.propTypes = {
+  id: PropTypes.number.isRequired,
+  imageUrl: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  descr: PropTypes.string,
+  spicy:  PropTypes.bool,
+  vegan:  PropTypes.bool,
+  price: PropTypes.arrayOf(PropTypes.number).isRequired,
+  handle: PropTypes.func
+
+};
+
+export default ProductItem;

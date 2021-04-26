@@ -1,5 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import ProductItem from './ProductItem';
+
 
 const ProductsList = ({items =  [], handleChoseProduct}) => {
   
@@ -14,5 +17,10 @@ const ProductsList = ({items =  [], handleChoseProduct}) => {
 
   )
 }
+
+ProductsList.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.object),
+  handleChoseProduct: PropTypes.func,
+};
 
 export default ProductsList;
