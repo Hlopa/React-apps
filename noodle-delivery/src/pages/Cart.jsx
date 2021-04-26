@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { addItemToCart, removeItemFromCart, clearCart, deleteAllItemFromCart } from '../redux/actions';
 
@@ -36,7 +37,7 @@ const Cart = () => {
             <div className="cart__plus icon-plus" onClick={() => handlePlus(item[1][0])}></div>
           </div>
           <div className="cart__item-price">
-            {item[1][0].currentCost* item[1].length} ₽
+            {item[1][0].currentCost * item[1].length} ₽
               </div>
           <div className="cart__item-remove" onClick={() => handleDelete(item[1][0], item[1].length)}>
             <span className="icon-trash"></span>
@@ -50,7 +51,7 @@ const Cart = () => {
 
   const handlePlus = (item) => {
 
-       const choseProduct = {
+    const choseProduct = {
       id: item.id,
       name: item.name,
       imageUrl: item.imageUrl,
@@ -64,19 +65,19 @@ const Cart = () => {
   };
 
   const handleMinus = (item, length) => {
- if(length > 1) {
-    const choseProduct = {
-      id: item.id,
-      name: item.name,
-      imageUrl: item.imageUrl,
-      currentCost: Number(item.currentCost),
-      size: item.size,
-      type: item.type
-    };
+    if (length > 1) {
+      const choseProduct = {
+        id: item.id,
+        name: item.name,
+        imageUrl: item.imageUrl,
+        currentCost: Number(item.currentCost),
+        size: item.size,
+        type: item.type
+      };
 
-    dispatch(removeItemFromCart(choseProduct));
-    getCurrentList(productsInCart);
- }
+      dispatch(removeItemFromCart(choseProduct));
+      getCurrentList(productsInCart);
+    }
   };
 
 
@@ -104,33 +105,47 @@ const Cart = () => {
       <div className="container">
         <div className="cart__inner">
           <h2 className="cart__title">Корзина</h2>
-          <div className="cart__clear" onClick={deleteAllCart}>
-            <span className="icon-trash"></span>
-            <span>Очистить корзину</span>
-          </div>
-          <div className="cart-box">
-            <div className="content__items">
-              {getCurrentList(productsInCart)}
-            </div>
-            <div className="cart__total ">
-              <div className="cart__total-inner">
-                <h3 className="cart__total-title">
-                  Оформить заказ
-              </h3>
-                <div className="cart__total-price cart__total-row">
-                  Стоимость заказа <span>{totalPrice} руб</span>
-                </div>
-                <div className="cart__total-price cart__total-row">
-                  Стоимость доставки <span>0 руб</span>
-                </div>
-                <div className="cart__total-total cart__total-row">
-                  Итого <span>{totalPrice} руб</span>
-                </div>
-                <a href="#" className="cart__total-btn button">Оформить</a>
+          {totalPrice ?
+            <React.Fragment>
+              <div className="cart__clear" onClick={deleteAllCart}>
+                <span className="icon-trash"></span>
+                <span>Очистить корзину</span>
               </div>
+              <div className="cart-box">
+                <div className="content__items">
+                  {getCurrentList(productsInCart)}
+                </div>
+                <div className="cart__total ">
+                  <div className="cart__total-inner">
+                    <h3 className="cart__total-title">
+                      Оформить заказ
+              </h3>
+                    <div className="cart__total-price cart__total-row">
+                      Стоимость заказа <span>{totalPrice} руб</span>
+                    </div>
+                    <div className="cart__total-price cart__total-row">
+                      Стоимость доставки <span>0 руб</span>
+                    </div>
+                    <div className="cart__total-total cart__total-row">
+                      Итого <span>{totalPrice} руб</span>
+                    </div>
+                    <a href="#" className="cart__total-btn button">Оформить</a>
+                  </div>
+                </div>
+              </div>
+            </React.Fragment>
+            : <div className="cart-empty__info empty-info">
+              <div className="empty-info__img">
+                <img src="images/plate-empty.png" alt="пустая тарелка" />
+              </div>
+              <h3 className="empty-info__title">
+                Ваша корзина пока пуста
+                </h3>
+              <Link to='/' className='button empty-info__btn'>
+                На главную
+              </Link>
             </div>
-          </div>
-
+          }
         </div>
       </div>
     </section>

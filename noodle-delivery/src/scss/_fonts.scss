@@ -25,6 +25,9 @@
     -moz-osx-font-smoothing: grayscale;
   }
   
+  .icon-times:before {
+    content: "\e905";
+  }
   .icon-plus:before {
     content: "\e903";
   }

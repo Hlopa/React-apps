@@ -23,53 +23,61 @@ const cart = (state = initialState, action) => {
         totalPrice: state.totalPrice + action.payload.currentCost
       };
 
-      case REMOVE_ITEM_FROM_CART:
-        const newww = [];
-        let count = 0;
+    case REMOVE_ITEM_FROM_CART:
+      const newww = [];
+      let count = 0;
 
-        state.productsInCart.forEach((el) => {
-          if(count ===0){
-            if(el.id ==  action.payload.id && el.size == action.payload.size && el.type == action.payload.type){
-            count = 1;  
+      state.productsInCart.forEach((el) => {
+        if (count === 0) {
+          if (el.id == action.payload.id && el.size == action.payload.size && el.type == action.payload.type) {
+            count = 1;
+            newww.push(el);
+          } else {
+            newww.push(el);
+          }
+        } else if (count === 1) {
+          if (el.id == action.payload.id && el.size == action.payload.size && el.type == action.payload.type) {
+            count = 2;
             return
           } else {
             newww.push(el);
           }
-          } else {
-            newww.push(el);
-          }
-        });
-        
-        const currentPizzaItemsMinus = !state.productsInCart ? [action.payload] : newww;
-        return {
-          ...state,
-          productsInCart: currentPizzaItemsMinus,
-          totalPrice: state.totalPrice - action.payload.currentCost
-        }; 
-      case CLEAR_CART: 
+        } else if (count === 2) {
+          newww.push(el);
+        }
+
+      });
+
+      const currentPizzaItemsMinus = !state.productsInCart ? [action.payload] : newww;
+      return {
+        ...state,
+        productsInCart: currentPizzaItemsMinus,
+        totalPrice: state.totalPrice - action.payload.currentCost
+      };
+    case CLEAR_CART:
       return {
         productsInCart: [],
         totalPrice: 0,
         totalCount: 0
       };
 
-      case DELETE_ITEM_FROM_CART:
-        const newW = [];
-     
-        state.productsInCart.forEach((el) => {
-            if(el.id ==  action.payload[0].id && el.size == action.payload[0].size && el.type == action.payload[0].type){
-            return
-          } else {
-            newW.push(el);
+    case DELETE_ITEM_FROM_CART:
+      const newW = [];
+
+      state.productsInCart.forEach((el) => {
+        if (el.id == action.payload[0].id && el.size == action.payload[0].size && el.type == action.payload[0].type) {
+          return
+        } else {
+          newW.push(el);
         }
       });
-        
-        const currentPizzaItemsDelete = !state.productsInCart ? [action.payload] : newW;
-        return {
-          ...state,
-          productsInCart: currentPizzaItemsDelete,
-          totalPrice: state.totalPrice - action.payload[0].currentCost*action.payload[1]
-        }; 
+
+      const currentPizzaItemsDelete = !state.productsInCart ? [action.payload] : newW;
+      return {
+        ...state,
+        productsInCart: currentPizzaItemsDelete,
+        totalPrice: state.totalPrice - action.payload[0].currentCost * action.payload[1]
+      };
 
     default:
       return state;

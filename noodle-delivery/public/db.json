@@ -4,7 +4,7 @@
       "id": 0,
       "imageUrl": "https://i.ibb.co/Xj8QmhM/product-1.png",
       "name": "Вок пад тай с креветками",
-      "descr": "Классический тайский вок с креветками и тофу на широкой рисовой лапше в аутентичном тамариндовом соусе",
+      "descr": "Классический тайский вок с креветками и тофу на широкой рисовой лапше в аутентичном тамариндовом соусе. Украшается зеленым луком и кунжутом",
       "price": [230, 350, 380],
       "price-min": 230,
       "category": 2,
@@ -14,19 +14,21 @@
     },
     {
       "id": 1,
-      "imageUrl": "https://i.ibb.co/w6SfHKv/product-2.png",
+      "imageUrl": "https://i.ibb.co/p1j9F6T/product-5.png",
       "name": "Вок с овощами",
       "price": [215, 320, 380],
       "price-min": 215,
-      "descr": "Обжаренные на воке в соусе терияки с кориандром, имбирем и чесноком. Украшается зеленым луком и кунжутом",
+      "descr": "Обжаренные на воке в соусе терияки с кориандром, имбирем и чесноком.  лассический тайский вок с куриным филе. Украшается зеленым луком и кунжутом. ",
       "category": 0,
       "rating": 6,
       "spicy": false,
       "vegan": true
     },
+
+    
     {
       "id": 2,
-      "imageUrl": "https://i.ibb.co/CPMVbGX/product-3.png",
+      "imageUrl": "https://i.ibb.co/Ht3TFxK/product-10.png",
       "name": "Брискет том-ям с яйцом",
       "price": [300, 350, 450],
       "price-min": 300,
@@ -38,7 +40,7 @@
     },
     {
       "id": 3,
-      "imageUrl": "https://i.ibb.co/1q0BmjK/product-4.png",
+      "imageUrl": "https://i.ibb.co/wMMJFV2/product-14.png",
       "name": "Вок с моцарелой",
       "price": [200, 280, 365],
       "price-min": 200,
@@ -50,7 +52,7 @@
     },
     {
       "id": 4,
-      "imageUrl": "https://i.ibb.co/p1j9F6T/product-5.png",
+      "imageUrl": "https://i.ibb.co/PgqXpWf/product-19.png",
       "name": "Вок кимчи",
       "descr": "Острый корейский вок на удоне с капустой кимчи, маринованной курицей, овощами и отварным яйцом",
       "price": [380, 420, 480],
@@ -62,7 +64,7 @@
     },
     {
       "id": 5,
-      "imageUrl": "https://i.ibb.co/10CC90H/product-6.png",
+      "imageUrl": "https://i.ibb.co/p2cqL4f/product-17.png",
       "name": "Вок Пад Тай с курицей",
       "price": [410, 450, 490],
       "price-min": 410,
@@ -86,7 +88,7 @@
     },
     {
       "id": 7,
-      "imageUrl": "https://i.ibb.co/swNYF8m/product-8.png",
+      "imageUrl": "https://i.ibb.co/02JtTNW/product-8.png",
       "name": "Брискет тайский терияки",
       "price": [340, 385, 415],
       "price-min": 340,
@@ -110,7 +112,7 @@
     },
     {
       "id": 9,
-      "imageUrl": "https://i.ibb.co/Prp9qpF/product-10.png",
+      "imageUrl": "https://i.ibb.co/Ht3TFxK/product-10.png",
       "name": "Вок по-гавайски",
         "descr": "Как наш вок курица с овощами, но еще лучше: добавили листья лайма, анисовую китайскую приправу и апельсин",
       "price": [285, 330, 380],
@@ -122,7 +124,7 @@
     },
     {
       "id": 10,
-      "imageUrl": "https://i.ibb.co/zsNZhsW/product-11.png",
+      "imageUrl": "https://i.ibb.co/CPMVbGX/product-3.png",
       "name": "Том ям с курицей",
       "descr": "Классическое сытное индийское блюдо: соус из протертых томатов со специями и мягкая, пряная, замаринованная в йогурте куриная грудка",
       "price": [300, 350, 400],
@@ -134,7 +136,7 @@
     },
     {
       "id": 11,
-      "imageUrl": "https://i.ibb.co/wRBq8G1/product-12.png",
+      "imageUrl": "https://i.ibb.co/10CC90H/product-6.png",
       "name": "Вок курица с кокосовым соусом",
       "descr": "Обжаренное на воке куриное филе с паприкой, луком, морковью, чесноком и нежным сливочным кокосовым соусом, украшается кинзой",
       "price": [285, 355, 415],
@@ -146,3 +148,4 @@
     }
   ]
 }
+

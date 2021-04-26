@@ -115,7 +115,7 @@ const ProductItem = ({ id, imageUrl, name, descr, spicy, vegan, price, handle })
         {activeItem
           ? <React.Fragment>
             <div className="products__buy-info">
-              <div className="product-hide" onClick={() => setActiveItem(false)}>Крестик</div>
+              <div className="product-hide icon-plus" onClick={() => setActiveItem(false)}></div>
               <div className="products__selector">
                 <ul>
                   {typesList}
